@@ -23,3 +23,8 @@
   * -m <commit msg> : msg를 인라인으로 첨부
   * -a : 모든 tracked 파일들을 자동으로 staging area에 넣고 commit → stage 단계를 건너뛰고 commit 가능
   * -S : GPG 서명을 추가
+* $ git rm <파일명> : working directory와 staging area에서 해당 tracked 파일을 삭제
+  * -f : 이미 수정한 파일이나 staging area에 추가한 파일을 강제로 삭제
+  * --cached : 파일을 staging area에서만 제거하고 working directory에서는 유지 → 추적 중지
+  * -r : 디렉토리 삭제시 추가
+* $ git mv <파일1> <파일2> : 파일1의 이름을 파일2로 변경(mv + git add )
