@@ -28,3 +28,9 @@
   * --cached : 파일을 staging area에서만 제거하고 working directory에서는 유지 → 추적 중지
   * -r : 디렉토리 삭제시 추가
 * $ git mv <파일1> <파일2> : 파일1의 이름을 파일2로 변경(mv + git add )
+* $ git remote : 현재 reopsitory에 등록된 remote repository의 단축 이름 표시
+  * -v : remote reopository 이름과 URL을 같이 표시
+* $ git remote add <단축 이름> <URL> : 해당 URL의 remote repository를 지정된 단축 이름으로 추가
+* $ git fetch <단축 이름> <branch> : 해당 remote repository의 해당 branch에서 데이터 다운로드
+* $ git pull <단축 이름> <branch> : 해당 remote reopsitory의 해당 branch에서 데이터를 다운로드받아 자동으로 merge
+* <!-- 여기까지--> 
