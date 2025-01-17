@@ -32,5 +32,13 @@
   * -v : remote reopository 이름과 URL을 같이 표시
 * $ git remote add <단축 이름> <URL> : 해당 URL의 remote repository를 지정된 단축 이름으로 추가
 * $ git fetch <단축 이름> <branch> : 해당 remote repository의 해당 branch에서 데이터 다운로드
+  * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch를 다운로드
 * $ git pull <단축 이름> <branch> : 해당 remote reopsitory의 해당 branch에서 데이터를 다운로드받아 자동으로 merge
+<!-- 여기까지--> 
+  * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch를 다운로드
+* $ git push <단축 이름> <branch> : 해당 remote repository의 해당 branch를 upstream 저장소에 업로드
+  * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch에 업로드
+* $ git remote show <단축 이름> : 해당 repository의 정보 출력
+* $ git remote rename <기존 단축 이름> <바꿀 단축 이름> : remote repository의 이름을 변경
+* $ git remote rm <단축 이름> : 해당 remote repository를 삭제
 * <!-- 여기까지--> 
