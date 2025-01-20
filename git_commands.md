@@ -40,5 +40,30 @@
   * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch에 업로드
 * $ git remote show <단축 이름> : 해당 repository의 정보 출력
 * $ git remote rename <기존 단축 이름> <바꿀 단축 이름> : remote repository의 이름을 변경
-* $ git remote rm <단축 이름> : 해당 remote repository를 삭제
-* <!-- 여기까지--> 
+* $ git remote rm <단축 이름> : 해당 remote repository를 삭제<br></br>
+<!-- 여기까지-->
+* $ git log : 현재 repository의 히스토리를 가장 최근 commit부터 출력
+  * <시작 commit>..<마지막 commit> : 지정한 commit 범위의 히스토리만 출력
+  * -p, --patch : 각 commit의 diff 결과를 출력
+  * -<n> : 최근 n개의 commit만 출력
+  * --stat : 각 commit의 통계 정보(수정된 파일, 변경된 라인 수, 요약)를 출력
+  * --not : 현재 branch의 commit 중 master branch에 없는 commit들의 정보만 출력
+  * --abbrev-commit : 짧고 중복되지 않는 hash를 출력(기본 7자, 중복될 경우 증가)
+  * -g : reflog를 출력
+  * -G <정규표현식> : 해당 정규표현식 패턴이 포함된 commit을 검색
+  * --pretty=<인자> : 인자에 따른 형식으로 히스토리를 출력
+    * oneline : 각 commit을 한 줄로 출력
+    * format:"<포맷>" : 자신만의 포맷을 적어 히스토리를 출력
+      |옵션|설명|옵션|설명|옵션|설명|
+      |-|---|-|---|-|---|
+      |%H|commit hash|%p|짧은 길이 부모 hash|%cn|commiter 이름|
+      |%h|짧은 길이 commit hash|%an|저자 이름|%ce|commiter mail|
+      |%T|tree hash|%ae|저자 mail|%cd|commiter 시각|
+      |%t|짧은 길이 tree hash|%ad|저자 시각(--date옵션 참고)|%cr|commiter 상대적 시각|
+      |%P|부모 hash|%ar|저자 상대적 시각|%s|요약|
+   * --graph : branch와 merge 히스토리를 보여주는 아스키 그래프 출력
+   * --since, --until<기간> : 해당 기간 동안 생성된 commit만 출력(정확한 날짜, 상대적인 기간도 입력 가능)
+   * --author <저자 이름> : 해당 저자의 commit만 출력
+   * --grep <키워드> : 해당 키워드가 포함되 commit message를 가진 commit만 출력
+   * -S <문자열> : 해당 문자열이 추가된 commit과 사라진 commit만 출력
+   * -L <시작라인>,<끝라인>:<파일경로> : 해당 경로에서 시작라인부터 끝라인까지의 내용 변경 이력을 검색
