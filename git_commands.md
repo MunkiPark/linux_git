@@ -34,14 +34,14 @@
 * $ git fetch <단축 이름> <branch> : 해당 remote repository의 해당 branch에서 데이터 다운로드
   * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch를 다운로드
 * $ git pull <단축 이름> <branch> : 해당 remote reopsitory의 해당 branch에서 데이터를 다운로드받아 자동으로 merge
-<!-- 여기까지--> 
+
   * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch를 다운로드
 * $ git push <단축 이름> <branch> : 해당 remote repository의 해당 branch를 upstream 저장소에 업로드
   * 단축이름과 branch를 명시하지 않을 경우 origin 저장소의 master(main) branch에 업로드
 * $ git remote show <단축 이름> : 해당 repository의 정보 출력
 * $ git remote rename <기존 단축 이름> <바꿀 단축 이름> : remote repository의 이름을 변경
 * $ git remote rm <단축 이름> : 해당 remote repository를 삭제<br></br>
-<!-- 여기까지-->
+
 * $ git log : 현재 repository의 히스토리를 가장 최근 commit부터 출력
   * <시작 commit>..<마지막 commit> : 지정한 commit 범위의 히스토리만 출력
   * -p, --patch : 각 commit의 diff 결과를 출력
@@ -66,4 +66,18 @@
    * --author <저자 이름> : 해당 저자의 commit만 출력
    * --grep <키워드> : 해당 키워드가 포함되 commit message를 가진 commit만 출력
    * -S <문자열> : 해당 문자열이 추가된 commit과 사라진 commit만 출력
-   * -L <시작라인>,<끝라인>:<파일경로> : 해당 경로에서 시작라인부터 끝라인까지의 내용 변경 이력을 검색
+   * -L <시작라인>,<끝라인>:<파일경로> : 해당 경로에서 시작라인부터 끝라인까지의 내용 변경 이력을 검색<br></br>
+<!-- 여기까지--> 
+* $ git tag <tag 이름> <commit checksum> : 해당 이름으로 주어진 checksum의 commit에 lightweight tag 생성
+  * commit checksum을 명시하지 않을 경우 현재 commit에 대해 tag 생성
+  * tag 이름과 commit checksum을 모두 명시하지 않으면 이미 해당 repository에 만들어져있는 tag 목록을 출력
+  * -a : annotated tag로 생성(tag 이름 앞에 작성)
+  * -d <tag 이름> : 지정한 tag를 삭제
+  * -m : tag message를 추가
+  * -s : GPG 서명을 추가
+  * -l <키워드>, --list <키워드> : 해당 키워드를 포함하는 tag만 출력(tag 조회할 때만)
+  * -v <tag 이름> : 지정한 tag의 서명, 정보 표시(tag 조회할 때만)
+* $ git push <remote repository> <tag 이름> : 해당 remote repository에 해당 tag를 push
+  * --tags : local repository의 tag 중 remote server에 없는 tag들을 모두 push
+* $ git checkout <tag 이름> : 해당 tag가 붙은 버전의 파일을 checkout
+<!-- 여기까지-->
