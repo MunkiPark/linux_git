@@ -72,7 +72,7 @@
    * --grep <키워드> : 해당 키워드가 포함되 commit message를 가진 commit만 출력
    * -S <문자열> : 해당 문자열이 추가된 commit과 사라진 commit만 출력
    * -L <시작라인>,<끝라인>:<파일경로> : 해당 경로에서 시작라인부터 끝라인까지의 내용 변경 이력을 검색<br></br>
-<!-- 여기까지--> 
+ 
 * $ git tag <tag 이름> <commit checksum> : 해당 이름으로 주어진 checksum의 commit에 lightweight tag 생성
   * commit checksum을 명시하지 않을 경우 현재 commit에 대해 tag 생성
   * tag 이름과 commit checksum을 모두 명시하지 않으면 이미 해당 repository에 만들어져있는 tag 목록을 출력
@@ -107,3 +107,24 @@
 * $ git rebase <base branch> <topic branch> : topic branch를 base branch에 rebase
   * topic branch를 명시하지 않을 경우 현재 branch를 base branch에 rebase
   * onto <branch1> <branch2> <branch3> : branch2가 branch1에서 갈라져 나오고 branch3이 branch2에서 갈라져 나왔을 때, branch3 고유의 commit만 branch1에 rebase
+<!-- 여기까지-->
+* $ git reflog : reflog를 표시<br></br>
+* $ git stash : 현재 작업물을 stash에 저장
+  * --keep-index : 이미 stagingarea에 들어있는 파일을 제외하고 저장
+  * -u, --include-untracked : untracked 파일도 저장
+  * --patch: 대화형 프롬프트를 통해 원하는 데이터만 저장
+  * -all : 모든 파일을 저장
+* $ git stash list : 저장한 stash를 확인
+* $ git stash apply <stash 이름> : 지정한 stash를 현재 branch에 적용
+  * <stash 이름>을 명시하지 않을 경우, 가장 최근의 stash를 적용
+  * --index : stash를 적용하면서 staged 상태로 변경
+* $ git stash drop <stash 이름> : 해당 stash를 제거
+* $ git stash pop <stash 이름> : 해당 stash를 적용한 후 제거(stack의 pop과 동일)
+* $ git stash branch <branch 이름> : stash할 당시의 commit을 checkout한 후 새로운 branch를 만들고 적용(정상적으로 적용되면 stash를 삭제)<br></br>
+* $ git clean : working directory의 파일들을 삭제
+  * -f : 강제로 삭제
+  * -d : directory 삭제 시 필요
+  * -n : 가상으로 삭제한 후 어떤 파일들이 삭제되는지 표시
+  * -x : .gitignore에 명시되어 commit할 때 무시되는 파일들도 삭제
+  * -i : 대화형 프롬프트를 이용하여 삭제
+<!-- 여기까지-->
